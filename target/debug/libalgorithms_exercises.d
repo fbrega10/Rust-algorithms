@@ -1,0 +1,1 @@
+/home/fabio/Scrivania/Programming-repository/Rust/algorithms-exercises/target/debug/libalgorithms_exercises.rlib: /home/fabio/Scrivania/Programming-repository/Rust/algorithms-exercises/src/insertionsort.rs /home/fabio/Scrivania/Programming-repository/Rust/algorithms-exercises/src/lib.rs
