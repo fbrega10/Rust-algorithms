@@ -4,16 +4,16 @@
 # Algorithms rewritten in Rust
 
 ### Build the project : 
-```rust 
+```bash
 $ cargo build --release
 ```
 
 ### Run the unit tests: 
-```rust 
+```bash
 $ cargo test
 ```
 
 ### Run the project
-```rust
+```bash
 $ cargo run
 ```
