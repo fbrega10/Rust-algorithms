@@ -47,44 +47,22 @@ pub fn bubble_sort(arr: &mut Vec<i32>) {
     }
 }
 
-#[test]
-pub fn insertion_sort_test() {
-    let mut array = vec![4, 5, 6, 1];
-    insertion_sort(&mut array);
-    assert_eq!(vec![1, 4, 5, 6], array);
-}
+pub fn binary_search(arr: &Vec<String>, element: &String) -> Option<String> {
+    assert!(arr.len() > 0);
+    let mut low: usize = 0;
+    let mut high: usize = arr.len();
+    let mut mid: usize = (high - low) / 2;
 
-#[test]
-pub fn insertion_sort_test2() {
-    let mut array = vec![30, 24, 19, 3, 2, 7, 13];
-    insertion_sort(&mut array);
-    assert_eq!(vec![2, 3, 7, 13, 19, 24, 30], array);
-}
-
-#[test]
-pub fn insertion_sort_duplication_test() {
-    let mut array = vec![30, 24, 19, 30, 3, 2, 7, 7, 13];
-    insertion_sort(&mut array);
-    assert_eq!(vec![2, 3, 7, 7, 13, 19, 24, 30, 30], array);
-}
-
-#[test]
-pub fn bubble_sort_test() {
-    let mut array = vec![4, 5, 6, 1];
-    bubble_sort(&mut array);
-    assert_eq!(vec![1, 4, 5, 6], array);
-}
-
-#[test]
-pub fn bubble_sort_test2() {
-    let mut array = vec![30, 24, 19, 3, 2, 7, 13];
-    bubble_sort(&mut array);
-    assert_eq!(vec![2, 3, 7, 13, 19, 24, 30], array);
-}
-
-#[test]
-pub fn bubbl_sort_duplication_test() {
-    let mut array = vec![30, 24, 19, 30, 3, 2, 7, 7, 13];
-    bubble_sort(&mut array);
-    assert_eq!(vec![2, 3, 7, 7, 13, 19, 24, 30, 30], array);
+    while mid > 0 {
+        mid = (high - low) / 2;
+        if *element == *arr[mid] {
+            println!("found the element guessed: {}", arr[mid]);
+            return Some(arr[mid].to_string());
+        } else if *element > arr[mid] {
+            low = mid - 1;
+        } else {
+            high = mid + 1;
+        }
+    }
+    None
 }

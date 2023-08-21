@@ -1,1 +1,1 @@
-pub mod insertionsort;
+pub mod sortsofsorts;
