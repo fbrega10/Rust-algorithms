@@ -56,7 +56,7 @@ pub fn binary_search(arr: &Vec<String>, element: &String) -> Option<String> {
     while mid > 0 {
         mid = (high - low) / 2;
         if *element == *arr[mid] {
-            println!("found the element guessed: {}", arr[mid]);
+            //the element is the guessed String
             return Some(arr[mid].to_string());
         } else if *element > arr[mid] {
             low = mid - 1;
