@@ -41,13 +41,15 @@ pub fn bubble_sort(arr: &mut Vec<i32>) {
             }
         }
         if flag == false {
-            //there has been no reordering
+            //there hasn't been any swap
             break;
         }
     }
 }
 
 pub fn binary_search(arr: &Vec<String>, element: &String) -> Option<String> {
+    //O(log n) execution time in the worst case
+    //performs well with large data
     assert!(arr.len() > 0);
     let mut low: usize = 0;
     let mut high: usize = arr.len();
@@ -65,4 +67,16 @@ pub fn binary_search(arr: &Vec<String>, element: &String) -> Option<String> {
         }
     }
     None
+}
+
+pub fn factorial_recursion(x: i64) -> i64 {
+    //Using recursion to calculate the factorial
+    //Each time you calculate a number, a new call to the factorial_recursion is pushed to the
+    //stack
+    assert!(x > 0);
+    if x == 1 {
+        return 1;
+    } else {
+        x * factorial_recursion(x - 1)
+    }
 }

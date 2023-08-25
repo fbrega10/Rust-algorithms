@@ -27,7 +27,7 @@ pub fn binary_search_test() {
             String::from("None")
         }
     };
-    assert_eq!(String::from("Bibi"), x);
+    assert_eq!(String::from("Bibi"), x)
 }
 
 pub fn binary_search_test2() {
@@ -67,5 +67,5 @@ pub fn binary_search_test2() {
         Some(x) => Some(x),
         None => None,
     };
-    assert_ne!(x.unwrap(), String::from("Not present yet"));
+    assert_ne!(x.unwrap(), String::from("Not present yet"))
 }
