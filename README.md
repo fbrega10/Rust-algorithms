@@ -8,12 +8,38 @@
 $ cargo build --release
 ```
 
-### Run the unit tests: 
+### Run the unit tests : 
 ```bash
-$ cargo test
+$ cargo test / cargo test single-test-name-example
 ```
 
-### Run the project
+### Run the project :
 ```bash
 $ cargo run
+```
+
+### Use Make to compile/test/run the project 
+### make build also formats the code to the cargo standard 
+```bash
+$ make build 
+```
+
+```bash
+$ make test 
+```
+
+```bash
+$ make run 
+```
+
+### Compile format and run with Make:
+
+```bash
+$ make all 
+```
+
+### Get help from the menu :
+
+```bash
+$ make help 
 ```

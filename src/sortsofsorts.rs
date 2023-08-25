@@ -80,3 +80,30 @@ pub fn factorial_recursion(x: i64) -> i64 {
         x * factorial_recursion(x - 1)
     }
 }
+
+pub fn pancake_sort(arr: &mut Vec<i32>) {
+    //very similar to the selection sort (same execution time -> O(n^2))
+    //selects the maximum element of the array and puts it on the right side
+    //of the array, while reducing the array length.
+    //when the size goes down to 1, all the array is sorted ouwhen the size goes down to 1, all the
+    //array is sorted out
+    let mut size = arr.len() - 1;
+    let mut max = 0;
+    let mut index = 0;
+
+    for _ in 0..size {
+        for x in 0..size {
+            if arr[x] > max {
+                max = arr[x];
+                index = x;
+            }
+        }
+
+        arr.swap(index, size);
+        max = 0;
+        if size == 1 {
+            break;
+        }
+        size -= 1;
+    }
+}

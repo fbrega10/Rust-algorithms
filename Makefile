@@ -16,6 +16,8 @@ run:
 all:
 	echo "building..."
 	cargo build --release
+	echo "formatting code..."
+	cargo fmt
 	echo "Execution: \n"
 	cargo run
 
