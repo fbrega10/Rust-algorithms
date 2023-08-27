@@ -87,6 +87,18 @@ pub fn factorial_recursion(x: i64) -> i64 {
     }
 }
 
+pub fn factorial_sum(x: &mut Vec<i64>) -> i64 {
+    //Using recursion to calculate the sum of the elements of an array
+    let first_index: usize = 0;
+    if x.len() == 1 {
+        return x[first_index];
+    } else {
+        let y = x[first_index];
+        x.remove(first_index);
+        return y + factorial_sum(x);
+    }
+}
+
 pub fn pancake_sort(arr: &mut Vec<i32>) {
     //very similar to the selection sort (same execution time -> O(n^2))
     //selects the maximum element of the array and puts it on the right side
