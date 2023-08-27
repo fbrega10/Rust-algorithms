@@ -20,7 +20,10 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-pub fn insertion_sort(arr: &mut Vec<i32>) {
+pub fn insertion_sort<T>(arr: &mut Vec<T>)
+where
+    T: Ord + Eq + Copy,
+{
     for j in 1..arr.len() {
         let mut key = j;
         while key > 0 && arr[key - 1] > arr[key] {
@@ -30,7 +33,10 @@ pub fn insertion_sort(arr: &mut Vec<i32>) {
     }
 }
 
-pub fn bubble_sort(arr: &mut Vec<i32>) {
+pub fn bubble_sort<T>(arr: &mut Vec<T>)
+where
+    T: Ord + Eq + Copy,
+{
     assert!(arr.len() > 0);
     for _ in 0..arr.len() {
         let mut flag = false;
