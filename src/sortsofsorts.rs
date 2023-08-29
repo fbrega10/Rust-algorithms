@@ -125,3 +125,29 @@ pub fn pancake_sort(arr: &mut Vec<i32>) {
         size -= 1;
     }
 }
+
+pub fn quicksort(mut arr: Vec<i32>) -> Vec<i32> {
+    //QuickSort is a sorting algorithm based on the Divide and Conquer algorithm
+    //that picks an element as a pivot and partitions the given array around the picked pivot
+    //by placing the pivot in its correct position in the sorted array.
+    //Time complexity is O(N log n) in the best and average case
+    //O(n^2) in the worst case
+    let mut high: Vec<i32> = vec![];
+    let mut low: Vec<i32> = vec![];
+    if arr.len() < 2 {
+        return arr;
+    }
+    let pivot = arr[0];
+    arr.remove(0);
+    for i in 0..arr.len() {
+        if arr[i] > pivot {
+            high.push(arr[i]);
+        } else {
+            low.push(arr[i]);
+        }
+    }
+    arr = quicksort(low);
+    arr.append(&mut vec![pivot]);
+    arr.append(&mut quicksort(high));
+    arr
+}
