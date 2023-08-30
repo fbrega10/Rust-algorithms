@@ -20,3 +20,22 @@ pub fn quicksort_duplication_test() {
     array = quicksort(array);
     assert_eq!(vec![2, 3, 7, 7, 13, 19, 24, 30, 30], array);
 }
+
+#[test]
+pub fn quicksort_string_test() {
+    let mut array = vec!["z", "t", "e", "a", "b", "c", "d"];
+    array = quicksort(array);
+    assert_eq!(vec!["a", "b", "c", "d", "e", "t", "z"], array);
+}
+
+#[test]
+pub fn quicksort_string_test2() {
+    let mut array = vec![
+        "zdfea", "teda", "mele", "yeua", "ebwb", "eawb", "eawb", "xdfepc", "red",
+    ];
+    array = quicksort(array);
+    assert_eq!(
+        vec!["eawb", "eawb", "ebwb", "mele", "red", "teda", "xdfepc", "yeua", "zdfea",],
+        array
+    );
+}
