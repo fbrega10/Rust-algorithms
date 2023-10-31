@@ -49,6 +49,17 @@ impl Node {
         }
     }
 
+    pub fn insert_node(&mut self,  other_node: &mut Node) {
+        //method to insert a node between two, the pointer to the next one changes
+        match &self.next{
+            None => self.next = Some(Box::new(other_node.clone())),
+            Some(_t) => {
+                other_node.next = self.next.clone();
+                self.next = Some(Box::new(other_node.clone()));
+            },
+        };
+    }
+
     pub fn to_string(&self) -> String{
         match &self.next{
             Some(t) => format!("Node value : {}, next value:  {}", self.value, t.value),
